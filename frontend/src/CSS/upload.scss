@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
+$h1: 20px;
+$h2: 18px;
+$h3: 16px;
+$h4: 14px;
+$h5: 13px;
+$form-help-text: 12px;
+$thumbnail-hover: 10px;
+$medium: 500;
+$regular: 400; 
+$videoTitleColor: #111111;
+$extraDetailColor:  #888888;
+$commentColor:#111111;
+$border: 1px solid #D4D4D4;
+$activeBorderColor: 1px solid #0095ff;
+
+@mixin videoFont() {
+
+  font-size: $h4;
+  color: $videoTitleColor;
+  font-weight: $medium;
+    
+}
+
+@mixin detailFont(){
+  font-size: $h5;
+  color: $extraDetailColor;
+  font-weight: $regular;
+}
+body{
+
+    background-color: #D4D4D4;
+}
+.upload{
+
+    margin: 2.5rem 4rem;
+    border: $border;
+    background-color: #ffffff;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    & img{
+
+      margin-bottom: 1.5rem;
+    }
+
+    &:active{
+  
+      border: $activeBorderColor;
+    }
+
+  &__h4{
+
+    @include videoFont();
+    padding:0;
+    margin:0.3rem 0;
+
+  }
+
+  &__h5{
+    
+    @include detailFont();
+    padding:0;
+    margin:0.3rem 0;
+  }
+}
+
