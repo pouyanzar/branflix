@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "netlify-cli": "^10.14.0",
+    "serverless-http": "^3.0.1"
   }
 }
