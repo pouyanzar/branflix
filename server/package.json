@@ -1,11 +1,13 @@
 {
   "name": "sprint-3",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.14.2",
+    "npm": "8.5.0"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "heroku-postbuild": "cd ../client && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
