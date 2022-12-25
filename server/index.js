@@ -16,10 +16,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.json("server is running!");
+  res.send("server is running!");
 });
 app.get("/videos", (req, res) => {
-  res.send(videoLinks);
+  res.json(videoLinks);
 });
 
 app.get("/videos/:id", (req, res) => {
