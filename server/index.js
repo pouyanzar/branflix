@@ -3,7 +3,7 @@ const app = express();
 const videoLinks = require("./videoLinks");
 const videos = require("./videos");
 const bodyParser = require("body-parser");
-
+const PORT = 8080 || process.env.PORT;
 app.all("/*", function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -39,6 +39,6 @@ app.post("/videos/:id/comments", (req, res) => {
   console.log(selectedComment);
   res.json(selectedComment.comments);
 });
-app.listen(8080, () => {
-  console.log("server running on 8080");
+app.listen(PORT, () => {
+  console.log(`server running on ${PORT}`);
 });
