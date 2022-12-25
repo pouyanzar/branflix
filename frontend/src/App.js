@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import AddComment from "./Components/AddComment";
 
-let baseUrl = "http://localhost:8080";
+let baseUrl = "https://branflix-server.herokuapp.com";
 
 class App extends Component {
   state = {
