@@ -8,16 +8,12 @@ import {
   Route,
   Switch,
   Redirect,
-  withRouter,
 } from "react-router-dom";
 import AddComment from "./Components/AddComment";
 
 let baseUrl = "http://localhost:8080";
 
 class App extends Component {
-  constructor() {
-    super();
-  }
   state = {
     videos: [],
     mainVideo: {
