@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   res.json("server is running!");
 });
 app.get("/videos", (req, res) => {
-  res.json(videoLinks);
+  res.send(videoLinks);
 });
 
 app.get("/videos/:id", (req, res) => {
