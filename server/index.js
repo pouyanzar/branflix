@@ -15,9 +15,6 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-  res.send("server is running!");
-});
 app.get("/videos", (req, res) => {
   res.json(videoLinks);
 });
