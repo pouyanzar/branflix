@@ -1,15 +1,17 @@
-import React, { Component } from 'react'
-import Timestamp from 'react-timestamp';
+import React from "react";
+import Timestamp from "react-timestamp";
 
-export default class Comment extends Component {
-  render() {
-    return (
-        <section className="comments">
-          <p className="comments__name">{this.props.name} 
-            <span className="comments__time"><Timestamp >{this.props.timestamp}</Timestamp></span>
-          </p>
-          <p className="comments__comment">{this.props.comment}</p>
-        </section>
-    )
-  }
-}
+const Comment = (props) => {
+  return (
+    <section className="comments">
+      <p className="comments__name">
+        {props.name}
+        <span className="comments__time">
+          <Timestamp>{props.timestamp}</Timestamp>
+        </span>
+      </p>
+      <p className="comments__comment">{props.comment}</p>
+    </section>
+  );
+};
+export default Comment;

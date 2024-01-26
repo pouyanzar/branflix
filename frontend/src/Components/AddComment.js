@@ -1,57 +1,44 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default class AddComment extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: "" };
-    this.changeHandler = this.changeHandler.bind(this);
-    this.submitHandler = this.submitHandler.bind(this);
-  }
-
-  submitHandler = (e) => {
+const AddComment = (props) => {
+  const [value, setValue] = useState("");
+  const submitHandler = (e) => {
     e.preventDefault();
     let name = "John";
     let id = 3;
-    console.log(this.state.value);
-    this.props.commentHandler(name, this.state.value, id, this.props.id);
+    console.log(value);
+    props.commentHandler(name, value, id, props.id);
   };
 
-  changeHandler = (e) => {
-    this.setState({ value: e.target.value });
-  };
-
-  render() {
-    return (
-      <div className="comments__public">
-        <img
-          className="header__profilePic"
-          src="/Assets/Images/john_gibbons.jpg"
-          alt="profile-pic"
+  return (
+    <div className="comments__public">
+      <img
+        className="header__profilePic"
+        src="/Assets/Images/john_gibbons.jpg"
+        alt="profile-pic"
+      />
+      <form className="comments__form" onSubmit={submitHandler}>
+        <input
+          className="comments__form--input"
+          value={value}
+          type="text"
+          name="textInput"
+          placeholder="Add a public comment"
+          onChange={(e) => setValue(e.target.value)}
         />
-        <form className="comments__form">
+        <div className="comments__form--button">
+          {/* <Link to={`/videos/${props.id}/comments`}> */}
           <input
-            className="comments__form--input"
-            value={this.state.value}
-            type="text"
-            name="textInput"
-            placeholder="Add a public comment"
-            onChange={this.changeHandler}
+            className="comments__form--submit"
+            type="submit"
+            value="Comment"
           />
-          <div className="comments__form--button">
-            {/* <button className="comments__form--cancel">Cancel</button> */}
-            <Link to={`/videos/${this.props.id}/comments`}>
-              <button
-                className="comments__form--submit"
-                type="submit"
-                onClick={this.submitHandler}
-              >
-                Comment
-              </button>
-            </Link>
-          </div>
-        </form>
-      </div>
-    );
-  }
-}
+          {/* </Link> */}
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default AddComment;
