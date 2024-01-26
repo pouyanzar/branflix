@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import AddComment from "./Components/AddComment";
 
-let baseUrl = "https://branflix-server.herokuapp.com";
+let baseUrl = "https://branflix-server.onrender.com";
 
 class App extends Component {
   state = {
